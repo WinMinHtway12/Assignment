@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class NowplayingViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+        value = "This is Now Playing Fragment"
     }
     val text: LiveData<String> = _text
 }
