@@ -25,7 +25,8 @@ class HomeViewModel : ViewModel() {
             val apiClient = ApiClient()
 
 
-            val apiCall = apiClient.getEverything()
+            val apiCall = apiClient.getNowPlaying("Drama")
+
 
             apiCall.enqueue(object : Callback<Movie> {
                 override fun onFailure(call: Call<Movie>, t: Throwable) {

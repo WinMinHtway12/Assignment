@@ -7,15 +7,15 @@
 
 
     <fragment
-        android:id="@+id/nav_popular"
+        android:id="@+id/nav_nowplaying"
         android:name="com.themovie.assignment.ui.nowplaying.NowplayingFragment"
-        android:label="Popular"
+        android:label="Now Playing"
         tools:layout="@layout/fragment_nowplaying" />
 
     <fragment
-        android:id="@+id/nav_nowplaying"
+        android:id="@+id/nav_popular"
         android:name="com.themovie.assignment.ui.popular.PopularFragment"
-        android:label="Nowplaying"
+        android:label="Popular"
         tools:layout="@layout/fragment_popular" />
 
     <fragment

@@ -8,8 +8,21 @@ import retrofit2.http.Query
 
 interface MovieApiInterface{
     @GET("now_playing")
-    fun getEverything(
-        @Query("api_key") apiKey: String
+
+    fun getNowPlaying(
+        @Query("api_key") apiKey: String,
+
     ): Call<Movie>
+    @GET("popular")
+    fun getPopular(
+        @Query("api_key")apiKey: String):Call<Movie>
+    @GET("top_rated")
+    fun getTopRate(
+        @Query("api_key")apiKey: String):Call<Movie>
+
+    @GET("upcoming")
+    fun getUpcoming(
+        @Query("api_key")apiKey: String):Call<Movie>
+
 
 }

@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
+
 import com.themovie.assignment.R
 import com.themovie.assignment.adapter.MovieAdapter
 import com.themovie.assignment.model.ResultsItem
@@ -33,7 +34,7 @@ class HomeFragment : Fragment() {
 
         movieAdapter = MovieAdapter();
 
-        recyclerMovie.layoutManager = LinearLayoutManager(context)
+        recyclerMovie.layoutManager =GridLayoutManager(context,2)
         recyclerMovie.adapter = movieAdapter
         homeViewModel.loadmovie()
 
