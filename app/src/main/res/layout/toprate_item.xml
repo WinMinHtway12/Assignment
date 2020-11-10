@@ -37,12 +37,12 @@
             android:id="@+id/date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="150dp"
+
             android:gravity="center_horizontal"
             android:text="ReleaseDate:"
             android:textColor="#000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="15dp"
+
             app:layout_constraintTop_toBottomOf="@id/toprateMovie"
             tools:ignore="MissingConstraints" />
 
@@ -52,9 +52,9 @@
             android:layout_height="wrap_content"
             android:text="jdsfkjsa;jwejr"
             android:textColor="#000"
-
+            android:textSize="15dp"
             app:layout_constraintLeft_toRightOf="@id/date"
-            app:layout_constraintStart_toEndOf="@+id/date"
+
             app:layout_constraintTop_toBottomOf="@id/toprateMovie" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
