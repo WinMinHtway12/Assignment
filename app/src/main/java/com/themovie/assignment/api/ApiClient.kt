@@ -27,8 +27,25 @@ class ApiClient {
 //    fun getDetail(id: String): Call<Movie> {
 //        return apiInterface.getDetails(id)
 //    }
-    fun getEverything(keyword:String):Call<Movie>{
+    fun getEverything():Call<Movie>{
 
         return apiInterface.getEverything("871dd789ec4e60ab37f454f22ceff629")
+    }
+
+    fun getPopular():Call<Movie>{
+
+        return apiInterface.getEverything("871dd789ec4e60ab37f454f22ceff629")
+    }
+    fun getToprated():Call<Movie>{
+
+        return apiInterface.getToprated("871dd789ec4e60ab37f454f22ceff629")
+    }
+    fun getNowplaying():Call<Movie>{
+
+        return apiInterface.getNowplaying("871dd789ec4e60ab37f454f22ceff629")
+    }
+    fun getUpcoming():Call<Movie>{
+
+        return apiInterface.getUpcoming("871dd789ec4e60ab37f454f22ceff629")
     }
 }

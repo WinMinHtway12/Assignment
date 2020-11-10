@@ -1,6 +1,8 @@
 package com.themovie.assignment.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class Movie(
 
@@ -19,7 +21,7 @@ data class Movie(
 	@field:SerializedName("total_results")
 	val totalResults: Int? = null
 )
-
+@Parcelize
 data class ResultsItem(
 
 	@field:SerializedName("overview")
@@ -63,7 +65,7 @@ data class ResultsItem(
 
 	@field:SerializedName("vote_count")
 	val voteCount: Int? = null
-)
+) : Parcelable
 
 data class Dates(
 

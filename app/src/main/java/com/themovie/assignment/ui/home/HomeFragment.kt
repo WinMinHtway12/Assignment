@@ -7,14 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.GridLayoutManager
 import com.themovie.assignment.R
 import com.themovie.assignment.adapter.MovieAdapter
 import com.themovie.assignment.model.ResultsItem
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
-class HomeFragment : Fragment() {
+  class HomeFragment : Fragment(),MovieAdapter.OnClickListener {
 
     lateinit var homeViewModel: HomeViewModel
     lateinit var movieAdapter: MovieAdapter
@@ -30,19 +32,31 @@ class HomeFragment : Fragment() {
 
         homeViewModel = ViewModelProvider(this)
             .get(HomeViewModel::class.java)
+        movieAdapter = MovieAdapter()
 
-        movieAdapter = MovieAdapter();
+        recyclerMovie.layoutManager =GridLayoutManager(context,2)
+        recyclerMovie.adapter= movieAdapter
 
-        recyclerMovie.layoutManager = LinearLayoutManager(context)
-        recyclerMovie.adapter = movieAdapter
-        homeViewModel.loadmovie()
 
+
+        movieAdapter.setOnClickListener(this)
        homeViewModel.getallmovie().observe(
             viewLifecycleOwner, Observer {
                 movieAdapter.updateMovie(it.results as List<ResultsItem>)
             }
         )
     }
-}
+
+      override fun onResume() {
+          super.onResume()
+          homeViewModel.loadmovie()
+      }
+    override fun onClick(item: ResultsItem) {
+        val directions=HomeFragmentDirections.actionNavHomeToNavDetail(item)
+        view?.findNavController()?.navigate(directions)
+    }
+
+
+ }
 
 
